@@ -9,12 +9,16 @@ pipeline {
         }
         stage('Package') {
             steps {
-                echo 'Packaging'
+                bat 'mvn clean package'
             }
         }
         stage('Publishing') {
             steps {
                 echo 'Publishing'
+            }
+        stage('Publish') {
+            steps {
+                bat 'Publishing'
             }
         }
     }
